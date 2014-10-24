@@ -89,6 +89,16 @@ namespace LangExt
         {
             return new Comparer<Choice<T1, T2>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
         }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, U>(this Choice<T1, T2> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2));
+        }
         /// <summary>
         /// T1を含む3要素の不完全Choiceオブジェクトを生成します。
         /// </summary>
@@ -179,6 +189,17 @@ namespace LangExt
             where T3 : IComparable<T3>
         {
             return new Comparer<Choice<T1, T2, T3>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, U>(this Choice<T1, T2, T3> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3));
         }
         /// <summary>
         /// T1を含む4要素の不完全Choiceオブジェクトを生成します。
@@ -282,6 +303,18 @@ namespace LangExt
             where T4 : IComparable<T4>
         {
             return new Comparer<Choice<T1, T2, T3, T4>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, U>(this Choice<T1, T2, T3, T4> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4));
         }
         /// <summary>
         /// T1を含む5要素の不完全Choiceオブジェクトを生成します。
@@ -397,6 +430,19 @@ namespace LangExt
             where T5 : IComparable<T5>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, U>(this Choice<T1, T2, T3, T4, T5> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5));
         }
         /// <summary>
         /// T1を含む6要素の不完全Choiceオブジェクトを生成します。
@@ -524,6 +570,20 @@ namespace LangExt
             where T6 : IComparable<T6>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, U>(this Choice<T1, T2, T3, T4, T5, T6> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6));
         }
         /// <summary>
         /// T1を含む7要素の不完全Choiceオブジェクトを生成します。
@@ -663,6 +723,21 @@ namespace LangExt
             where T7 : IComparable<T7>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, U>(this Choice<T1, T2, T3, T4, T5, T6, T7> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7));
         }
         /// <summary>
         /// T1を含む8要素の不完全Choiceオブジェクトを生成します。
@@ -814,6 +889,22 @@ namespace LangExt
             where T8 : IComparable<T8>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7, T8>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, T8, U>(this Choice<T1, T2, T3, T4, T5, T6, T7, T8> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+            where T8 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7), t8 => act(t8));
         }
         /// <summary>
         /// T1を含む9要素の不完全Choiceオブジェクトを生成します。
@@ -977,6 +1068,23 @@ namespace LangExt
             where T9 : IComparable<T9>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, T8, T9, U>(this Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+            where T8 : U
+            where T9 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7), t8 => act(t8), t9 => act(t9));
         }
         /// <summary>
         /// T1を含む10要素の不完全Choiceオブジェクトを生成します。
@@ -1152,6 +1260,24 @@ namespace LangExt
             where T10 : IComparable<T10>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, U>(this Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+            where T8 : U
+            where T9 : U
+            where T10 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7), t8 => act(t8), t9 => act(t9), t10 => act(t10));
         }
         /// <summary>
         /// T1を含む11要素の不完全Choiceオブジェクトを生成します。
@@ -1339,6 +1465,25 @@ namespace LangExt
             where T11 : IComparable<T11>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, U>(this Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+            where T8 : U
+            where T9 : U
+            where T10 : U
+            where T11 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7), t8 => act(t8), t9 => act(t9), t10 => act(t10), t11 => act(t11));
         }
         /// <summary>
         /// T1を含む12要素の不完全Choiceオブジェクトを生成します。
@@ -1538,6 +1683,26 @@ namespace LangExt
             where T12 : IComparable<T12>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, U>(this Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+            where T8 : U
+            where T9 : U
+            where T10 : U
+            where T11 : U
+            where T12 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7), t8 => act(t8), t9 => act(t9), t10 => act(t10), t11 => act(t11), t12 => act(t12));
         }
         /// <summary>
         /// T1を含む13要素の不完全Choiceオブジェクトを生成します。
@@ -1749,6 +1914,27 @@ namespace LangExt
             where T13 : IComparable<T13>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, U>(this Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+            where T8 : U
+            where T9 : U
+            where T10 : U
+            where T11 : U
+            where T12 : U
+            where T13 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7), t8 => act(t8), t9 => act(t9), t10 => act(t10), t11 => act(t11), t12 => act(t12), t13 => act(t13));
         }
         /// <summary>
         /// T1を含む14要素の不完全Choiceオブジェクトを生成します。
@@ -1972,6 +2158,28 @@ namespace LangExt
             where T14 : IComparable<T14>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, U>(this Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+            where T8 : U
+            where T9 : U
+            where T10 : U
+            where T11 : U
+            where T12 : U
+            where T13 : U
+            where T14 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7), t8 => act(t8), t9 => act(t9), t10 => act(t10), t11 => act(t11), t12 => act(t12), t13 => act(t13), t14 => act(t14));
         }
         /// <summary>
         /// T1を含む15要素の不完全Choiceオブジェクトを生成します。
@@ -2207,6 +2415,29 @@ namespace LangExt
             where T15 : IComparable<T15>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, U>(this Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+            where T8 : U
+            where T9 : U
+            where T10 : U
+            where T11 : U
+            where T12 : U
+            where T13 : U
+            where T14 : U
+            where T15 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7), t8 => act(t8), t9 => act(t9), t10 => act(t10), t11 => act(t11), t12 => act(t12), t13 => act(t13), t14 => act(t14), t15 => act(t15));
         }
         /// <summary>
         /// T1を含む16要素の不完全Choiceオブジェクトを生成します。
@@ -2454,6 +2685,30 @@ namespace LangExt
             where T16 : IComparable<T16>
         {
             return new Comparer<Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
+        }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, U>(this Choice<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16> self, Action<U> act)
+            where T1 : U
+            where T2 : U
+            where T3 : U
+            where T4 : U
+            where T5 : U
+            where T6 : U
+            where T7 : U
+            where T8 : U
+            where T9 : U
+            where T10 : U
+            where T11 : U
+            where T12 : U
+            where T13 : U
+            where T14 : U
+            where T15 : U
+            where T16 : U
+        {
+            self.Match(t1 => act(t1), t2 => act(t2), t3 => act(t3), t4 => act(t4), t5 => act(t5), t6 => act(t6), t7 => act(t7), t8 => act(t8), t9 => act(t9), t10 => act(t10), t11 => act(t11), t12 => act(t12), t13 => act(t13), t14 => act(t14), t15 => act(t15), t16 => act(t16));
         }
 
         /// <summary>

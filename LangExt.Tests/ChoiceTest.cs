@@ -73,5 +73,13 @@ namespace LangExt.Tests
             var cmp = Choice.Comparer<int, string>();
             Assert.That(cmp.Compare(x, y), Is.EqualTo(expected));
         }
+
+        [Test]
+        public void 型パラメータが継承関係にある型を引数とする関数を適用できる()
+        {
+            var m1 = "format";
+            var x = new Choice<InvalidCastException, FormatException>(new FormatException(m1));
+            x.Iter((Exception e) => { Assert.That(e.Message, Is.EqualTo(m1)); });
+        }
     }
 }

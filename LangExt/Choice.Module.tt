@@ -111,6 +111,17 @@ for (int j = 0; j < i; j++) {
         {
             return new Comparer<Choice<<#= types #>>>((a, b) => a.CompareTo(b).Match(() => -1, () => 0, () => 1));
         }
+
+        /// <summary>
+        /// 全ての型パラメータがUを継承するChoice[...]に対し、擬似的にパターンマッチを行い、actを実行します。
+        /// </summary>
+        public static void Iter<<#= types #>, U>(this Choice<<#= types #>> self, Action<U> act)
+<# for (int j = 0; j < i; j++) { #>
+            where T<#= j + 1 #> : U
+<# } #>
+        {
+            self.Match(<#= Repeat(", ", "t{0} => act(t{0})", i) #>);
+        }
 <# } #>
 
         /// <summary>
