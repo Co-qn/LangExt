@@ -720,6 +720,29 @@ namespace LangExt.Tests
             Assert.That(mapped._15(), Is.EqualTo(15));
         }
 
+        [Test]
+        public void _16要素タプルの全要素に対してMapできる()
+        {
+            var tpl = Create.Tuple(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+            var mapped = tpl.Map(x => x * 2);
+
+            Assert.That(mapped._1(), Is.EqualTo(1 * 2));
+            Assert.That(mapped._2(), Is.EqualTo(2 * 2));
+            Assert.That(mapped._3(), Is.EqualTo(3 * 2));
+            Assert.That(mapped._4(), Is.EqualTo(4 * 2));
+            Assert.That(mapped._5(), Is.EqualTo(5 * 2));
+            Assert.That(mapped._6(), Is.EqualTo(6 * 2));
+            Assert.That(mapped._7(), Is.EqualTo(7 * 2));
+            Assert.That(mapped._8(), Is.EqualTo(8 * 2));
+            Assert.That(mapped._9(), Is.EqualTo(9 * 2));
+            Assert.That(mapped._10(), Is.EqualTo(10 * 2));
+            Assert.That(mapped._11(), Is.EqualTo(11 * 2));
+            Assert.That(mapped._12(), Is.EqualTo(12 * 2));
+            Assert.That(mapped._13(), Is.EqualTo(13 * 2));
+            Assert.That(mapped._14(), Is.EqualTo(14 * 2));
+            Assert.That(mapped._15(), Is.EqualTo(15 * 2));
+            Assert.That(mapped._16(), Is.EqualTo(16 * 2));
+        }
 #endregion
 
 #region その他のテスト

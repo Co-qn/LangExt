@@ -145,6 +145,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), f(self._2()));
         }
 
+        /// <summary>型が同一な2要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T> Map<T>(this Tuple<T, T> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2) => TupleModule.Create(f(t1), f(t2)));
+        }
         /// <summary>3要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3> Create<T1, T2, T3>(T1 t1, T2 t2, T3 t3)
         {
@@ -207,6 +212,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), f(self._3()));
         }
 
+        /// <summary>型が同一な3要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T> Map<T>(this Tuple<T, T, T> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3) => TupleModule.Create(f(t1), f(t2), f(t3)));
+        }
         /// <summary>4要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4> Create<T1, T2, T3, T4>(T1 t1, T2 t2, T3 t3, T4 t4)
         {
@@ -277,6 +287,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), f(self._4()));
         }
 
+        /// <summary>型が同一な4要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T> Map<T>(this Tuple<T, T, T, T> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4)));
+        }
         /// <summary>5要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5> Create<T1, T2, T3, T4, T5>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5)
         {
@@ -355,6 +370,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), f(self._5()));
         }
 
+        /// <summary>型が同一な5要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T> Map<T>(this Tuple<T, T, T, T, T> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5)));
+        }
         /// <summary>6要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6> Create<T1, T2, T3, T4, T5, T6>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6)
         {
@@ -441,6 +461,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), f(self._6()));
         }
 
+        /// <summary>型が同一な6要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T> Map<T>(this Tuple<T, T, T, T, T, T> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6)));
+        }
         /// <summary>7要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7> Create<T1, T2, T3, T4, T5, T6, T7>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7)
         {
@@ -535,6 +560,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), f(self._7()));
         }
 
+        /// <summary>型が同一な7要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T> Map<T>(this Tuple<T, T, T, T, T, T, T> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7)));
+        }
         /// <summary>8要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7, Tuple<T8>> Create<T1, T2, T3, T4, T5, T6, T7, T8>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8)
         {
@@ -637,6 +667,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), self._7(), f(self._8()));
         }
 
+        /// <summary>型が同一な8要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T, Tuple<T>> Map<T>(this Tuple<T, T, T, T, T, T, T, Tuple<T>> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7, t8) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7), f(t8)));
+        }
         /// <summary>9要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7, Tuple<T8, T9>> Create<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9)
         {
@@ -747,6 +782,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), self._7(), self._8(), f(self._9()));
         }
 
+        /// <summary>型が同一な9要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T, Tuple<T, T>> Map<T>(this Tuple<T, T, T, T, T, T, T, Tuple<T, T>> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7, t8, t9) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7), f(t8), f(t9)));
+        }
         /// <summary>10要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7, Tuple<T8, T9, T10>> Create<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10)
         {
@@ -865,6 +905,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), self._7(), self._8(), self._9(), f(self._10()));
         }
 
+        /// <summary>型が同一な10要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T, Tuple<T, T, T>> Map<T>(this Tuple<T, T, T, T, T, T, T, Tuple<T, T, T>> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7, t8, t9, t10) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7), f(t8), f(t9), f(t10)));
+        }
         /// <summary>11要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7, Tuple<T8, T9, T10, T11>> Create<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11)
         {
@@ -991,6 +1036,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), self._7(), self._8(), self._9(), self._10(), f(self._11()));
         }
 
+        /// <summary>型が同一な11要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T>> Map<T>(this Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T>> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7), f(t8), f(t9), f(t10), f(t11)));
+        }
         /// <summary>12要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7, Tuple<T8, T9, T10, T11, T12>> Create<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12)
         {
@@ -1125,6 +1175,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), self._7(), self._8(), self._9(), self._10(), self._11(), f(self._12()));
         }
 
+        /// <summary>型が同一な12要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T>> Map<T>(this Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T>> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7), f(t8), f(t9), f(t10), f(t11), f(t12)));
+        }
         /// <summary>13要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7, Tuple<T8, T9, T10, T11, T12, T13>> Create<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13)
         {
@@ -1267,6 +1322,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), self._7(), self._8(), self._9(), self._10(), self._11(), self._12(), f(self._13()));
         }
 
+        /// <summary>型が同一な13要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T, T>> Map<T>(this Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T, T>> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7), f(t8), f(t9), f(t10), f(t11), f(t12), f(t13)));
+        }
         /// <summary>14要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7, Tuple<T8, T9, T10, T11, T12, T13, T14>> Create<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14)
         {
@@ -1417,6 +1477,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), self._7(), self._8(), self._9(), self._10(), self._11(), self._12(), self._13(), f(self._14()));
         }
 
+        /// <summary>型が同一な14要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T, T, T>> Map<T>(this Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T, T, T>> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7), f(t8), f(t9), f(t10), f(t11), f(t12), f(t13), f(t14)));
+        }
         /// <summary>15要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7, Tuple<T8, T9, T10, T11, T12, T13, T14, Tuple<T15>>> Create<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15)
         {
@@ -1575,6 +1640,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), self._7(), self._8(), self._9(), self._10(), self._11(), self._12(), self._13(), self._14(), f(self._15()));
         }
 
+        /// <summary>型が同一な15要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T, T, T, Tuple<T>>> Map<T>(this Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T, T, T, Tuple<T>>> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7), f(t8), f(t9), f(t10), f(t11), f(t12), f(t13), f(t14), f(t15)));
+        }
         /// <summary>16要素のタプルを生成します。</summary>
         public static Tuple<T1, T2, T3, T4, T5, T6, T7, Tuple<T8, T9, T10, T11, T12, T13, T14, Tuple<T15, T16>>> Create<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16>(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6, T7 t7, T8 t8, T9 t9, T10 t10, T11 t11, T12 t12, T13 t13, T14 t14, T15 t15, T16 t16)
         {
@@ -1731,6 +1801,11 @@ namespace LangExt
             return TupleModule.Create(self._1(), self._2(), self._3(), self._4(), self._5(), self._6(), self._7(), self._8(), self._9(), self._10(), self._11(), self._12(), self._13(), self._14(), self._15(), f(self._16()));
         }
 
+        /// <summary>型が同一な16要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T, T, T, Tuple<T, T>>> Map<T>(this Tuple<T, T, T, T, T, T, T, Tuple<T, T, T, T, T, T, T, Tuple<T, T>>> self, Func<T, T> f)
+        {
+            return self.Match((t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16) => TupleModule.Create(f(t1), f(t2), f(t3), f(t4), f(t5), f(t6), f(t7), f(t8), f(t9), f(t10), f(t11), f(t12), f(t13), f(t14), f(t15), f(t16)));
+        }
         
         /// <summary>
         /// 使用しません。

@@ -101,6 +101,11 @@ namespace LangExt
 <#
         }
 #>
+        /// <summary>型が同一な<#= i #>要素タプルの全ての要素に対して、関数を適用します。</summary>
+        public static <#= TupleType(i, n => "T") #> Map<T>(this <#= TupleType(i, n => "T") #> self, Func<T, T> f)
+        {
+            return self.Match((<#= Repeat(", ", "t{0}", i) #>) => TupleModule.Create(<#= Repeat(", ", "f(t{0})", i) #>));
+        }
 <# } #>
         
         /// <summary>
